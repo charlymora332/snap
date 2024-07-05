@@ -354,10 +354,10 @@ main {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-blanco);
-    display: inline-block;
+    display: inline;
     text-align: center;
     width: auto;
-    max-width: 200px;
+    max-width: 300px;
     padding: 10px 20px;
     background-color: var(--color-gris-oscuro);
     text-decoration: none;
