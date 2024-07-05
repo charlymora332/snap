@@ -1,0 +1,560 @@
+:root {
+    --color-gris-oscuro: hsl(0, 0%, 8%);
+    --color-negro-oscuro: hsl(0, 0%, 8%);
+    --color-negro-medio: hsl(0, 0%, 41%);
+    --color-gris-medio: hsl(0, 0%, 45%);
+    --color-gris-claro: hsl(0, 0%, 20%);
+    --color-verde-amarillo: hsl(75, 94%, 57%);
+    --color-blanco: hsl(0, 0%, 100%);
+    --color-blanco-pastel: hsl(0, 0%, 98%)
+}
+
+html {
+    font-size: clamp(12px, 1vw, 24px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--color-blanco-pastel);
+    min-width: 860px;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+}
+
+header nav {
+    display: flex;
+    padding: 1rem;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header nav li,
+header nav a {
+    color: var(--color-negro-medio);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+header nav li:hover,
+header nav a:hover {
+    color: var(--color-negro-oscuro);
+    transition: 5ms;
+}
+
+.imgMenu {
+    display: none;
+}
+
+.contenedorMenu {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.ajustesUbicicion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacioIconos {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.logoMarca img {
+    aspect-ratio: 3/1 !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opcionesMenu {
+    cursor: pointer;
+}
+
+.subOpcionesMenu {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    top: 100%;
+    height: auto;
+    background-color: var(--color-blanco);
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.61);
+    border: 1px solid #ffffff;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.subOpcionesMenu li {
+    padding: 3px 0;
+}
+
+.flotarIzquierda {
+    right: 0;
+    height: 11rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.flotarDerecha {
+    left: 0;
+    height: 8rem;
+}
+
+.subOpcionesMenu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.subOpcionesMenu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-gris-medio);
+    white-space: nowrap;
+    padding: 0 1rem;
+}
+
+.subOpcionesMenu a img {
+    margin-right: 10px;
+    width: 1rem;
+    height: 1rem;
+}
+
+.featureOptions {
+    display: none;
+
+}
+
+.opcionesMenu:hover .subOpcionesMenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: menu-navegacion 1s forwards;
+
+}
+
+@keyframes menu-navegacion {
+    from {
+        opacity: 0;
+        /* Estado inicial con opacidad 0 */
+        display: none;
+        height: 0;
+    }
+
+    to {
+        opacity: 1;
+        /* Estado final con opacidad 1 */
+        display: block;
+    }
+}
+
+
+.cajaAcceso {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 0 1rem;
+    gap: 1rem;
+    right: 0;
+    align-items: center;
+    height: 100%;
+}
+
+.cajaAcceso li {
+    padding: 0.5rem 1rem;
+}
+
+
+.btBorde {
+    border: solid 3px var(--color-negro-medio);
+    border-radius: 1rem;
+}
+
+.btBorde:hover {
+    border: solid 3px var(--color-negro-oscuro);
+    border-radius: 1rem;
+}
+
+.icono {
+    animation: quitarImagen 0s forwards;
+    height: 0.5rem;
+    margin-left: 1rem;
+    position: absolute;
+    right: 0;
+}
+
+.icon-down {
+    animation: ponerImagen 0.1s forwards;
+}
+
+
+/* Cambio de imagen al hacer hover ^^^^^^ up doun pico abajo y arriab  */
+
+.opcionesMenu:hover .icon-up {
+    animation: ponerImagen 0.1s forwards;
+}
+
+
+
+
+.opcionesMenu:hover .icon-down {
+    animation: quitarImagen 0.1s forwards;
+}
+
+
+@keyframes quitarImagen {
+    to {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes ponerImagen {
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hpss {
+    height: 80%;
+    width: 80%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    max-width: 1400px;
+    grid-template-rows: 100%;
+}
+
+.contenedorInformacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.referencias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+    z-index: 10;
+    align-items: center;
+    overflow: hidden;
+}
+
+.referencias img {
+    height: 2rem;
+    object-fit: cover;
+}
+
+.imagenWalp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imagenWalp img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagenWalpMovil {
+    display: none;
+}
+
+.imagenWalpComputador {
+    position: absolute;
+    right: 0;
+}
+
+.contenedorTexto {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.contenedorTexto h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    margin-bottom: 0;
+    margin-top: 3rem;
+    line-height: .9;
+}
+
+.textoMovil {
+    display: none;
+}
+
+
+.contenedorTexto h2 {
+    font-size: 4.5rem;
+    margin-top: 0;
+    font-weight: bold;
+    color: #666;
+    line-height: .9;
+}
+
+.contenedorTexto p {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+}
+
+.contenedorTexto a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    max-width: 200px;
+    padding: 10px 20px;
+    background-color: var(--color-gris-oscuro);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    border: solid 2px var(--color-negro-oscuro);
+    transition: .3s;
+}
+
+.contenedorTexto a:hover {
+    background-color: var(--color-blanco-pastel);
+    color: var(--color-negro-oscuro);
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        font-size: 10px;
+        min-width: 250px;
+    }
+
+    header {
+        height: 10%;
+        min-height: 4rem;
+    }
+
+    main {
+        align-items: flex-start;
+        height: auto;
+        min-height: 90%;
+    }
+
+    .logoMarca {
+        padding: 0;
+    }
+
+    .contenedorMenu {
+        position: absolute;
+        height: max-content;
+        width: 60%;
+        right: 0;
+        top: 0;
+        z-index: 12;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        animation: quitarImagen 0s forwards;
+        background-color: var(--color-blanco);
+    }
+
+    .mostrar {
+        padding-top: 10rem;
+        display: block;
+        height: 100%;
+        animation: menu-navegacion 1s forwards;
+        overflow: hidden;
+
+    }
+
+    .quitar {
+        animation: menu-navegacion-recoger 1s forwards;
+        overflow: hidden;
+    }
+
+
+    /*no usado para el menu  */
+    @keyframes menu-navegacion-recoger {
+        from {
+            opacity: 1;
+            display: block;
+            height: 100%;
+            margin-top: 8rem;
+        }
+        to {
+            opacity: 0;
+            height: 0;
+            padding-top: 9rem;
+        }
+    }
+
+    .ajustesUbicicion {
+        justify-content: left;
+        text-align: left;
+        align-items: normal;
+        width: 9rem;
+    }
+
+    .ajustesUbicicion img {
+        top: .7rem;
+        height: 1rem;
+    }
+
+    .cajaAcceso li {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .opcionesMenu {
+        flex-direction: column;
+    }
+
+    .subOpcionesMenu {
+        position: relative;
+        top: 0rem;
+        left: 0rem;
+        padding-left: 1rem;
+        width: 15rem;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .flotarIzquierda {
+        right: 0;
+        height: 12.5rem;
+    }
+
+    .flotarDerecha {
+        left: 0;
+        height: 9rem;
+    }
+
+    .cajaAcceso {
+        padding-top: 10%;
+        flex-direction: column;
+    }
+
+    .hpss {
+        display: grid;
+        width: 100%;
+        min-height: 100%;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-template-rows: 40% auto;
+        overflow: auto;
+    }
+
+    .contenedorInformacion {
+        width: 100%;
+        justify-content: space-around;
+        overflow: hidden;
+    }
+
+    .contenedorTexto {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: fit-content;
+        padding: 0 5%;
+    }
+
+    h1,
+    h2 {
+        display: none;
+    }
+
+    .contenedorTexto .textoMovil {
+        display: block;
+        font-size: 3.5rem;
+    }
+
+    .imagenWalp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1;
+    }
+
+    .imagenWalpComputador {
+        display: none;
+    }
+
+    .imagenWalpMovil {
+        display: block;
+        height: 100%;
+        aspect-ratio: 5/4;
+    }
+
+    .imgMenu {
+        z-index: 40;
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgMenu img {
+        height: 3.5rem;
+        aspect-ratio: 1;
+    }
+
+    .menuCerrar {
+        display: none;
+    }
+}
